@@ -38,7 +38,7 @@ class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) 
 
     private val mPaths = ArrayList<CustomPath>() // ArrayList for Paths
 
-    private val mUndoPaths = ArrayList<CustomPath>()
+    private val mUndoPaths = ArrayList<CustomPath>() //last paths to remove on delete
 
     init {
         setUpDrawing()
@@ -181,6 +181,8 @@ class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) 
             invalidate() // Invalidate the whole view. If the view is visible
         }
     }
+
+
 
     // An inner class for custom path with two params as color and stroke size.
     internal inner class CustomPath(var color: Int, var brushThickness: Float) : Path()
